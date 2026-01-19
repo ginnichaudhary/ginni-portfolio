@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginni Chaudhary - Data Analyst Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        ovo: ['Ovo', 'serif']
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #2d2d2d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Hide scrollbar for mobile menu when open if needed */
+        .no-scroll {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-[#11001F] text-gray-900 dark:text-white font-outfit transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 px-5 lg:px-20 py-4 flex items-center justify-between transition-all duration-300">
+        <div class="text-2xl font-bold tracking-tighter uppercase font-ovo cursor-pointer">
+            Ginni Chaudhary <span class="text-orange-500">.</span>
+        </div>
+
+        <ul class="hidden md:flex items-center gap-8 bg-white/50 dark:bg-white/10 px-10 py-3 rounded-full border border-gray-200 dark:border-white/20 backdrop-blur-sm">
+            <li><a href="#home" class="text-sm font-medium hover:text-orange-500 transition-colors uppercase tracking-wider">Home</a></li>
+            <li><a href="#about" class="text-sm font-medium hover:text-orange-500 transition-colors uppercase tracking-wider">About</a></li>
+            <li><a href="#work" class="text-sm font-medium hover:text-orange-500 transition-colors uppercase tracking-wider">Work</a></li>
+            <li><a href="#contact" class="text-sm font-medium hover:text-orange-500 transition-colors uppercase tracking-wider">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+                <i data-lucide="moon" class="dark:hidden block w-5 h-5"></i>
+                <i data-lucide="sun" class="hidden dark:block w-5 h-5"></i>
+            </button>
+            <a href="#contact" class="hidden lg:flex items-center gap-2 px-6 py-2 border border-gray-300 dark:border-white/30 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                Contact <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+            <button id="menu-btn" class="md:hidden p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-black transform translate-x-full transition-transform duration-500 md:hidden p-10 flex flex-col">
+        <button id="close-menu-btn" class="absolute top-10 right-10 p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <ul class="flex flex-col gap-8 text-3xl font-bold mt-20 font-ovo">
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#work" class="mobile-link">Work</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden pt-20">
+        <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-purple-500/10 blur-[120px] -z-10 rounded-full pointer-events-none"></div>
+        
+        <div class="w-40 h-40 rounded-full bg-gray-200 mb-6 overflow-hidden border-4 border-white shadow-xl flex items-center justify-center relative z-10">
+            <!-- Using your provided profile image path -->
+            <img 
+                src="./assets/profile-img.png" 
+                alt="Ginni Chaudhary" 
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Ginni';"
+            >
+        </div>
+
+        <h3 class="text-xl md:text-2xl font-medium mb-3 flex items-center gap-2 font-ovo">
+            Hi! I'm Ginni Chaudhary 👋
+        </h3>
+        <h1 class="text-4xl md:text-7xl font-bold mb-6 max-w-4xl leading-tight font-ovo">
+            aspiring data analyst <br /> based in India.
+        </h1>
+        <p class="max-w-2xl text-gray-500 dark:text-gray-400 mb-10 text-lg font-ovo leading-relaxed">
+            I am an aspiring Data Analyst skilled in Excel, SQL, Python, Power BI and Tableau, with hands-on experience in data cleaning, exploratory data analysis, KPI tracking and dashboard development.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 relative z-10">
+            <a href="#contact" class="px-10 py-4 bg-gradient-to-r from-purple-600 to-orange-500 text-white rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 transition-transform shadow-lg">
+                Contact Me <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="./assets/Ginni_Resume.pdf" download class="px-10 py-4 border border-gray-300 dark:border-white/20 rounded-full font-bold flex items-center justify-center gap-2 bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                My Resume <i data-lucide="download" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 lg:px-20">
+        <div class="max-w-6xl mx-auto">
+            <h4 class="text-center mb-2 text-lg font-ovo uppercase tracking-widest text-orange-500 font-bold">Introduction</h4>
+            <h2 class="text-center text-5xl font-bold mb-16 font-ovo">About me</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <!-- Image Container -->
+                <div class="relative group">
+                    <div class="w-72 h-80 bg-gray-100 rounded-3xl overflow-hidden shadow-2xl relative flex items-center justify-center transform transition-transform duration-500 hover:scale-[1.02]">
+                        <!-- Using your provided profile image path -->
+                        <img 
+                            src="./assets/profile-img.png" 
+                            alt="Ginni Chaudhary" 
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Ginni_About';"
+                        >
+                    </div>
+                    
+                    <!-- Circular Rotating Text -->
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white dark:bg-gray-800 rounded-full shadow-xl flex items-center justify-center z-10">
+                        <svg class="w-full h-full animate-spin-slow" viewBox="0 0 100 100">
+                            <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                            <text class="text-[10px] font-bold fill-gray-800 dark:fill-white uppercase tracking-[4px]">
+                                <textPath xlink:href="#circlePath">
+                                    DATA ANALYST • DATA ANALYST • 
+                                </textPath>
+                            </text>
+                        </svg>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg text-white">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Content -->
+                <div class="flex-1">
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-ovo">
+                        I am a passionate data enthusiast with a strong foundation in Electronics and Communication Engineering. 
+                        My journey involves leveraging statistical methods and technical tools to solve complex business problems.
+                        With my Deloitte internship experience, I have honed my skills in ETL processes and dashboarding.
+                    </p>
+
+                    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <!-- Skill 1 -->
+                        <li class="p-6 border border-gray-300 dark:border-white/30 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-default group hover:-translate-y-1 hover:shadow-md">
+                            <div class="text-orange-500 mb-4 group-hover:scale-110 transition-transform">
+                                <i data-lucide="code-2" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">Ginni's Languages</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Python, SQL, C++</p>
+                        </li>
+                        <!-- Skill 2 -->
+                        <li class="p-6 border border-gray-300 dark:border-white/30 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-default group hover:-translate-y-1 hover:shadow-md">
+                            <div class="text-orange-500 mb-4 group-hover:scale-110 transition-transform">
+                                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">Ginni's Education</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">B.Tech in ECE (DCRUST)</p>
+                        </li>
+                        <!-- Skill 3 -->
+                        <li class="p-6 border border-gray-300 dark:border-white/30 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-default group hover:-translate-y-1 hover:shadow-md">
+                            <div class="text-orange-500 mb-4 group-hover:scale-110 transition-transform">
+                                <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">Ginni's Projects</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">5+ Real-world Data Projects</p>
+                        </li>
+                    </ul>
+
+                    <div class="mt-12">
+                        <h4 class="font-bold mb-6 font-ovo">Tools Ginni Chaudhary Uses</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="w-14 h-14 flex items-center justify-center bg-white dark:bg-transparent rounded-xl border border-gray-300 dark:border-white/30 hover:border-orange-500 transition-colors hover:-translate-y-1 cursor-pointer" title="Power BI">
+                                <span class="text-[8px] font-black uppercase text-center">Power BI</span>
+                            </div>
+                            <div class="w-14 h-14 flex items-center justify-center bg-white dark:bg-transparent rounded-xl border border-gray-300 dark:border-white/30 hover:border-orange-500 transition-colors hover:-translate-y-1 cursor-pointer" title="Tableau">
+                                <span class="text-[8px] font-black uppercase text-center">Tableau</span>
+                            </div>
+                            <div class="w-14 h-14 flex items-center justify-center bg-white dark:bg-transparent rounded-xl border border-gray-300 dark:border-white/30 hover:border-orange-500 transition-colors hover:-translate-y-1 cursor-pointer" title="MySQL">
+                                <span class="text-[8px] font-black uppercase text-center">MySQL</span>
+                            </div>
+                            <div class="w-14 h-14 flex items-center justify-center bg-white dark:bg-transparent rounded-xl border border-gray-300 dark:border-white/30 hover:border-orange-500 transition-colors hover:-translate-y-1 cursor-pointer" title="Pandas">
+                                <span class="text-[8px] font-black uppercase text-center">Pandas</span>
+                            </div>
+                            <div class="w-14 h-14 flex items-center justify-center bg-white dark:bg-transparent rounded-xl border border-gray-300 dark:border-white/30 hover:border-orange-500 transition-colors hover:-translate-y-1 cursor-pointer" title="GitHub">
+                                <span class="text-[8px] font-black uppercase text-center">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24 bg-gray-50 dark:bg-white/5 px-6 lg:px-20">
+        <div class="max-w-6xl mx-auto">
+            <h4 class="text-center mb-2 text-lg font-ovo uppercase text-orange-500 font-bold">My portfolio</h4>
+            <h2 class="text-center text-5xl font-bold mb-6 font-ovo">Ginni's Work</h2>
+            <p class="text-center text-gray-500 dark:text-gray-400 mb-16 max-w-2xl mx-auto font-ovo">
+                Explore a collection of real-world data analytics projects showcasing my skills in visualization, machine learning, and business insights.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1 -->
+                <a href="https://github.com/ginnichaudhary" target="_blank" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=400" alt="Sales Data Analysis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <h4 class="text-white font-bold text-xl mb-1">Sales Data Analysis</h4>
+                        <p class="text-orange-400 text-xs font-bold uppercase tracking-wider mb-4">Excel • Python • EDA</p>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center self-end border border-black shadow-[2px_2px_0_#000]">
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-black"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- Project 2 -->
+                <a href="https://github.com/ginnichaudhary" target="_blank" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" alt="Power BI Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <h4 class="text-white font-bold text-xl mb-1">Power BI Dashboard</h4>
+                        <p class="text-orange-400 text-xs font-bold uppercase tracking-wider mb-4">Power BI • DAX • KPIs</p>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center self-end border border-black shadow-[2px_2px_0_#000]">
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-black"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- Project 3 -->
+                <a href="https://github.com/ginnichaudhary" target="_blank" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&q=80&w=400" alt="Bitcoin Sentiment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <h4 class="text-white font-bold text-xl mb-1">Bitcoin Sentiment</h4>
+                        <p class="text-orange-400 text-xs font-bold uppercase tracking-wider mb-4">Python • NLP • Pandas</p>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center self-end border border-black shadow-[2px_2px_0_#000]">
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-black"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- Project 4 -->
+                <a href="https://github.com/ginnichaudhary" target="_blank" class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg bg-gray-200 block">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400" alt="Fraud Detection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <h4 class="text-white font-bold text-xl mb-1">Fraud Detection</h4>
+                        <p class="text-orange-400 text-xs font-bold uppercase tracking-wider mb-4">Machine Learning • Python</p>
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center self-end border border-black shadow-[2px_2px_0_#000]">
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-black"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-16">
+                <button class="px-10 py-3 border border-gray-300 dark:border-white/20 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-all font-bold font-ovo">
+                    Show more
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 lg:px-20 relative">
+        <div class="max-w-4xl mx-auto">
+             <h4 class="text-center mb-2 text-lg font-ovo uppercase text-orange-500 font-bold">Connect with me</h4>
+             <h2 class="text-center text-5xl font-bold mb-16 font-ovo">Contact Ginni Chaudhary</h2>
+             
+             <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent!');">
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-ovo">
+                 <input type="text" placeholder="Enter your name" class="w-full p-4 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/30 focus:border-orange-500 outline-none transition-all dark:text-white" required>
+                 <input type="email" placeholder="Enter your email" class="w-full p-4 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/30 focus:border-orange-500 outline-none transition-all dark:text-white" required>
+               </div>
+               <textarea rows="6" placeholder="Enter your message" class="w-full p-4 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/30 focus:border-orange-500 outline-none transition-all font-ovo dark:text-white" required></textarea>
+               <button type="submit" class="w-full md:w-max px-12 py-4 bg-black text-white dark:bg-white dark:text-black rounded-full font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg">
+                 Submit now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+               </button>
+             </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-200 dark:border-white/10 text-center">
+        <div class="mb-8">
+            <h2 class="text-2xl font-black mb-4 uppercase font-ovo">Ginni Chaudhary<span class="text-orange-500">.</span></h2>
+            <div class="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <a href="mailto:ginnichaudhary105@gmail.com" class="hover:text-orange-500 transition-colors">ginnichaudhary105@gmail.com</a>
+            </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 pt-10 border-t border-gray-200 dark:border-white/10 gap-6 font-ovo">
+            <p class="text-sm text-gray-500">© 2026 Ginni Chaudhary | Data Analyst Portfolio</p>
+            <div class="flex gap-8 font-bold">
+                <a href="https://github.com/ginnichaudhary" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-1">
+                     GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/ginnichaudhary" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-1">
+                     LinkedIn
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // DOM Elements
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const navbar = document.getElementById('navbar');
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Mobile Menu Logic
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            mobileMenu.classList.toggle('translate-x-0');
+            document.body.classList.toggle('no-scroll');
+        };
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Scroll Effect Logic
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/80', 'dark:bg-black/50', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('bg-white/80', 'dark:bg-black/50', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Dark Mode Logic
+        // Check system preference or localStorage
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+    </script>
+</body>
+</html>
